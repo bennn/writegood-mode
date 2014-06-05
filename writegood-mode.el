@@ -231,7 +231,7 @@
           (sentences (float (writegood-count-sentences text)))
           (syllables (float (writegood-count-syllables text)))
           (score     (- 206.835 (* 1.015 (/ words sentences)) (* 84.6 (/ syllables words)))))
-     (message "Flesch-Kincaid reading ease score: %.2f (words = %d, sentc = %d syll = %d)" score words sentences syllables)))
+     (message "Flesch-Kincaid reading ease score: %.2f" score)))
 
 (defun writegood-grade-level (&optional start end)
   "Flesch-Kincaid grade level test. Converts reading ease score to a grade level (Score ~ years of school needed to read passage)."
@@ -243,7 +243,7 @@
           (sentences (float (writegood-count-sentences text)))
           (syllables (float (writegood-count-syllables text)))
           (score     (+ (* 0.39 (/ words sentences)) (* 11.8 (/ syllables words)) -15.59)))
-     (message "Flesh-Kincaid grade level score: %.2f (words = %d, sentc = %d syll = %d)" score words sentences syllables)))
+     (message "Flesh-Kincaid grade level score: %.2f" score)))
 
 ;;;###autoload
 (define-minor-mode writegood-mode
